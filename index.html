@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Realidad Aumentada</title>
+    <script src="https://aframe.io/releases/1.8.0/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+</head>
+<body style='margin : 0px; overflow: hidden;'>
+        <!-- we add detectionMode and matrixCodeType to tell AR.js to recognize barcode markers -->
+    <a-scene embedded arjs renderer='precision: medium;'>
+        <a-assets>
+            <a-asset-item id="modelo" src="modelos/Growlithe.glb"></a-asset-item>
+        </a-assets>
+		<a-marker preset="hiro">
+			<!-- <a-cone position='0 0.5 0' rotation="0 0 0" radius-bottom="0.5" material='opacity: 0.75; color: red;'></a-cone> -->
+            <a-entity gltf-model="#modelo" scale="0.2 0.2 0.2" animation-mixer></a-entity>
+        </a-marker>
+		<a-entity camera></a-entity>       
+    </a-scene>
+</body>
+</html>
